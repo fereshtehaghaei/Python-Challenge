@@ -15,6 +15,15 @@ with open(budgetpath,'r', newline ='') as budgetfile:
     budgetheader = next(budgetreader)
     print(f'{budgetheader}')
 
+"""Analyzing Records"""
+
+# Calculating Total number of months
+for month in budgetreader:
+    Total_Number_Months = Number_Months + Total_Number_Months
+
+
+
+
     
 
 """"  
