@@ -1,41 +1,48 @@
-## PyBank
+#import library
 import os
 import csv
 
-# Assigning the path since my CSV file is in a seprate folder called Resource folder
-budgetpath = os.path.join('Resources', 'budget_data.csv')
+#joining path
+budget_data = os.path.join("Resources", "budget_data.csv")
 
-"""Analyzing Records"""
-# Initialize the variables for Months and create an empty list
-months = []
-count = 0
+# open and read csv
+with open(budget_data, newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+    csv_header = next(csvfile)
+    # skip header row
+    print(f"Header: {csv_header}")
 
-# Initialize the variables for Profit/losses and create an empty list
-profit = []
-total_profit_losses = 0
+   
+   """Analyzing Records"""
 
-# Now open the file 
-with open(budgetpath,'r', newline ='') as budgetfile:
+    #Initialize variables & Create and empty list for Date
+    months=[]
+    months =0
 
-# Now Reading the file
-    budgetreader =csv.reader(budgetfile, delimiter = ',')
+    # Finding Net Profit/losses and create an empty list
+    profit = []
+    total_profit_losses = 0
 
-# Read the header row 1st and then Converting current row into a list
-    budgetheader = next(budgetreader)
-    print(f'{budgetheader}')
+    # Initialize the variables for Average Changes in Profit/losses 
+    average_change_profit = 0
 
-    for row in budgetreader:
-  # Calculating Total number of months
-      count = count + 1
+    # Loop & Read through each row
+    for rows in budgetreader:
+
+    # Calculating Total number of months
+      months +=1
 
   # Add month count to Months[] list. It will be used for greatest incease and decrease.
-      months.append(row[0])
-      print(count)
+      months.append(rows[0])
+      'print(count)
 
-# Calculating the net total amount of "Profit/Losses"
-      total_profit_losses = total_profit_losses + int(row[1])
-      profit.append(row[1])
-      print(total_profit_losses)
+# Calculating the net Total amount of "Profit/Losses"
+      total_profit_losses = total_profit_losses + int(rows[1])
+      profit.append(rows[1])
+      'print(total_profit_losses)
+
+# Calculating Average of changes in Profit/Losses over the entire period
+average = total_profit_losses / count
 
 
     
