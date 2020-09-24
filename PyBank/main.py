@@ -5,6 +5,15 @@ import csv
 # Assigning the path since my CSV file is in a seprate folder called Resource folder
 budgetpath = os.path.join('Resources', 'budget_data.csv')
 
+"""Analyzing Records"""
+# Initialize the variables for Months and create an empty list
+months = []
+count = 0
+
+# Initialize the variables for Profit/losses and create an empty list
+profit = []
+total_profit_losses = 0
+
 # Now open the file 
 with open(budgetpath,'r', newline ='') as budgetfile:
 
@@ -15,13 +24,18 @@ with open(budgetpath,'r', newline ='') as budgetfile:
     budgetheader = next(budgetreader)
     print(f'{budgetheader}')
 
-"""Analyzing Records"""
+    for row in budgetreader:
+  # Calculating Total number of months
+      count = count + 1
 
-# Calculating Total number of months
-for month in budgetreader:
-    Total_Number_Months = Number_Months + Total_Number_Months
+  # Add month count to Months[] list. It will be used for greatest incease and decrease.
+      months.append(row[0])
+      print(count)
 
-
+# Calculating the net total amount of "Profit/Losses"
+      total_profit_losses = total_profit_losses + int(row[1])
+      profit.append(row[1])
+      print(total_profit_losses)
 
 
     
