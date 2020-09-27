@@ -12,7 +12,7 @@ with open(budget_data, newline="") as budget:
     # skip header row
     print(f"Header: {budget_header}")   
    
-    # # # #  Analyzing Records  # # # #  
+    #*#*#*#*#*#*#*#* Analyzing Records Formulas Begin *#*#*#*#*#*#*#*#*
 
     #Initialize variables & Create and empty list for Date
     date=[]
@@ -31,16 +31,14 @@ with open(budget_data, newline="") as budget:
       date.append(rows[0])
       months_total = len(date)
       
-    # Calculating the net Total amount of "Profit/Losses"
+    # Calculating the net Total amount of "Profit/Losses" & adding to profit_losst[] empty list
       profit_loss.append(int(rows[1]))
       total_profit_Loss = int(sum(profit_loss))
       
 
-  
+    # Calculating Average of changes in Profit/Losses over the entire period
 
-  # Calculating Average of changes in Profit/Losses over the entire period
-
-  # print out the Results
+    # print out the Results
     print("Financial Analysis")
 
     print("-----------------------------------------------------------------------")
