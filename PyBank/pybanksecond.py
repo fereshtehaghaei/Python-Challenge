@@ -6,18 +6,18 @@ import csv
 PyBankcsv = os.path.join("Resources","budget_data.csv")
 
 # Initialize the variables and Create the lists for Date 
-'date = []
+date = []
 count = 0
 # Initialize the variables and Create the lists for profit/Losses
-'profit = []
-'total_profit = 0
+profit = []
+total_profit = 0
 # Initialize the variables and Create the lists for Average
 monthly_changes = []
 initial_profit = 0
 final_profit = 0
 monthly_change_profits = 0
 total_change_profits = 0
-'average_change_profits = 0
+average_change_profits = 0
 
 # Open the CSV using the set path PyBankcsv
 
@@ -26,16 +26,16 @@ with open(PyBankcsv, newline="") as csvfile:
     csv_header = next(csvreader)
 
     
-    'for row in csvreader:    
+    for row in csvreader:    
       # Use count to count the number months in this dataset
       count = count + 1 
 
       # Will need it when collecting the greatest increase and decrease in profits
-      'date.append(row[0])
+      date.append(row[0])
 
       # Append the profit information & calculate the total profit
-      'profit.append(row[1])
-      'total_profit = total_profit + int(row[1])
+      profit.append(row[1])
+      total_profit = total_profit + int(row[1])
 
       #Calculate the average change in profits from month to month. Then calulate the average change in profits
       final_profit = int(row[1])
