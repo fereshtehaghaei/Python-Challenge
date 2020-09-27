@@ -31,20 +31,20 @@ with open(budget_data, newline="") as budget:
       date.append(rows[0])
       months_total = len(date)
       
-    # Calculating the net Total amount of "Profit/Losses" & adding to profit_losst[] empty list
+    # Calculating Total amount of "Profit/Losses" & Adding to profit_losst[] empty list & Formatting $ sign in to total
       profit_loss.append(int(rows[1]))
       total_profit_Loss = int(sum(profit_loss))
-      
+      total_profit_Loss = "${:.0f}".format(total_profit_Loss)
 
     # Calculating Average of changes in Profit/Losses over the entire period
+      average_change = int(sum(profit_loss)) / len(profit_loss)
 
-    # print out the Results
+    # print out the Results for Financial Analysis
     print("Financial Analysis")
-
     print("-----------------------------------------------------------------------")
-
     print(f'Total Months: {months_total}')
     print(f'Total Profit_Loss: {total_profit_Loss}')
+    print(f'Average Change: {average_change}')
 
 
 """"  
