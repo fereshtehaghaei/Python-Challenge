@@ -22,6 +22,7 @@ with open(budget_data, newline="") as csvbudget:
     # Create empty lists to iterate through specific rows for the following variables
     profit_loss = []
     monthly_profit_change = []
+    
     # Loop & Read through each row in stored file
     for rows in budget_reader:
 
