@@ -13,7 +13,8 @@ with open(budget_data, newline="") as csvbudget:
     # skip header row
     # print(f"Header: {budget_header}")   
    
-    #*#*#*#*#*#*#*#* Analyzing Records Begin *#*#*#*#*#*#*#*#* 
+    #*#*#*#*#*#*#*#**#*#*#*#*#*#*#*#* Analyzing Records Begin *#*#*#*#*#*#*#*#**#*#*#*#*#*#*#*#*
+
     #Initialize variables & Create and empty list [] for Date
     months=[]
     months_total =0
