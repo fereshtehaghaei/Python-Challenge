@@ -10,33 +10,45 @@ with open(election_data, newline="") as csv_election:
     election_reader = csv.reader(csv_election, delimiter=",")
     election_header = next(csv_election)
 
-    # Initialize variable and create and empty list[] for number of votes
+    # Initialize variable and create and empty list[] 
     votes =[]
     total_votes = 0
+    candidates_votes =[]
+    # Creating a dictionary for cadiates
+    candidates_dictionary = {}
     
+
     # Loop & read through each row
-    for rows in election_reader:
+    for candidates in election_reader:
         
     # calculating The total number of votes cast
-        votes.append(rows[0])
-        total_votes += 1
+        votes.append(candidates[0])
+        total_votes = (len(votes))
 
+    # Calculating a complete list of candidates who received votes
+        if candidates[2] in candidates_dictionary.keys(): 
+          candidates_dictionary[candidates[2]] += 1
+        else:
+          candidates_dictionary[candidates[2]] = 1
+          #Testing dictionary for keys and values
+          #print(candidates_dictionary)   
+       
+for candid, num_votes in candidates_dictionary.items():
+    candidates_votes.append(candid)
+    votes.append(num_votes)
+    
 # print out Eelction Results
 print("--------------------------------------")
 print("     Election Results:")
 print("--------------------------------------")
 print(f'Total Votes: {total_votes}')
-
+print(f'')
 
 
 
 
 """
-The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`. 
 
-Your task is to create a Python script that analyzes the votes and calculates each of the following:
-
-  * The total number of votes cast
 
   * A complete list of candidates who received votes
 
