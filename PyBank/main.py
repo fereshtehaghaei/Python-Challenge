@@ -5,15 +5,6 @@ import csv
 #joining path
 budget_data = os.path.join("Resources", "budget_data.csv")
 
-
-#Initialize variables & Create and empty list [] for Date
-months=[]
-months_total =0
-    
-# Create empty lists to iterate through specific rows for the following variables
-profit_loss = []
-monthly_profit_change = []
-
 # open and read csv
 with open(budget_data, newline="") as csvbudget:
     budget_reader = csv.reader(csvbudget, delimiter=",")
@@ -22,8 +13,14 @@ with open(budget_data, newline="") as csvbudget:
     # skip header row
     # print(f"Header: {budget_header}")   
    
-    #*#*#*#*#*#*#*#* Analyzing Records Formulas Begin *#*#*#*#*#*#*#*#* 
-
+    #*#*#*#*#*#*#*#* Analyzing Records Begin *#*#*#*#*#*#*#*#* 
+    #Initialize variables & Create and empty list [] for Date
+    months=[]
+    months_total =0
+    
+    # Create empty lists to iterate through specific rows for the following variables
+    profit_loss = []
+    monthly_profit_change = []
     # Loop & Read through each row in stored file
     for rows in budget_reader:
 
