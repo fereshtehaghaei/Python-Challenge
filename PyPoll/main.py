@@ -13,11 +13,12 @@ with open(election_data, newline="") as csv_election:
     # Initialize variable and create and empty list[] 
     votes =[]
     total_votes = 0
-    candidates_votes =[]
-  
+    candidate_votes =[]
+    vote_percentage =[]
+
     # Creating a dictionary for cadiates
-    candidates_dictionary = {}
-    #candidate name = key you have to make a mark
+    candidates_dictionary = {}  #candidate name = key, you have to make a mark
+    
 
     # Loop & read through each row
     for candidates in election_reader:
@@ -29,20 +30,26 @@ with open(election_data, newline="") as csv_election:
 
     # Calculating a complete list of candidates who received votes
         if candidate in candidates_dictionary:
-          candidates_dictionary[candidate]+=1 # creating a count in dictionary since we have none
+          candidates_dictionary[candidate]+=1   # creating a count in dictionary since we have none
         else:
           candidates_dictionary[candidate]= 1 # candidate in dictionary
         # test print dictionary
-    # print(candidates_dictionary)   
+    # print(candidates_dictionary)
+  
+# Calculating The percentage of votes each candidate won
+# taking dictionary keys and values and set it up candiate votes list
+for key, value in candidates_dictionary.items():
+    candidates.append(key)
+    candidate_votes.append(value)
+
+for vote in candidate_votes:
+    vote_percentage=(round(vote/total_votes*100,3))
     
-    # Calculating The percentage of votes each candidate won
-        (candidates_votes / total_votes) 
 
-    #final_list = list(zip(votes,candidates_votes))
+#candidates_votes= list(zip(votes, candidate_votes, vote_percentage))
 
+# The winner of the election based on popular vote.   
 
-        
-    
 # print out Eelction Results
 print("     Election Results ")
 print("--------------------------------------")
@@ -50,9 +57,7 @@ print(f'Total Votes: {total_votes}')
 print("--------------------------------------")
 # Created a For loop to iterate through dictionary and print each key
 for candidate, candidates_votes in candidates_dictionary.items():
-    print(candidate + ':  ' + '('+str(candidates_votes)+')')
-
-
+    print(candidate + ':  ' + str(vote_percentage) + '% ' + ' ('+str(candidates_votes)+')')
 
 
 """
