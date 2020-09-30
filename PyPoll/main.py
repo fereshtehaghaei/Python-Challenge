@@ -14,9 +14,10 @@ with open(election_data, newline="") as csv_election:
     votes =[]
     total_votes = 0
     candidates_votes =[]
+  
     # Creating a dictionary for cadiates
     candidates_dictionary = {}
-    
+    #candidate name = key you have to make a mark
 
     # Loop & read through each row
     for candidates in election_reader:
@@ -24,25 +25,27 @@ with open(election_data, newline="") as csv_election:
     # calculating The total number of votes cast
         votes.append(candidates[0])
         total_votes = (len(votes))
+        candidate = (candidates[2])
 
     # Calculating a complete list of candidates who received votes
-        if candidates[2] in candidates_dictionary.keys(): 
-          candidates_dictionary[candidates[2]] += 1
+        if candidate in candidates_dictionary:
+          candidates_dictionary[candidate]+=1 # creating a count in dictionary since we have none
         else:
-          candidates_dictionary[candidates[2]] = 1
-          #Testing dictionary for keys and values
-          #print(candidates_dictionary)   
-       
-for candid, num_votes in candidates_dictionary.items():
-    candidates_votes.append(candid)
-    votes.append(num_votes)
+          candidates_dictionary[candidate]= 1 # candidate in dictionary
+     #print(candidates_dictionary)
+    final_list = list(zip(votes,candidates_votes))
+
+
+        
     
 # print out Eelction Results
-print("--------------------------------------")
+
 print("     Election Results:")
 print("--------------------------------------")
 print(f'Total Votes: {total_votes}')
-print(f'')
+print("--------------------------------------")
+for candidate, candidates_votes in candidates_dictionary.items():
+    print(candidate + ':  ' + '('+str(candidates_votes)+')')
 
 
 
