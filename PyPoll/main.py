@@ -25,25 +25,30 @@ with open(election_data, newline="") as csv_election:
     # calculating The total number of votes cast
         votes.append(candidates[0])
         total_votes = (len(votes))
-        candidate = (candidates[2])
+        candidate = (candidates[2])  #assigning candidate column 
 
     # Calculating a complete list of candidates who received votes
         if candidate in candidates_dictionary:
           candidates_dictionary[candidate]+=1 # creating a count in dictionary since we have none
         else:
           candidates_dictionary[candidate]= 1 # candidate in dictionary
-     #print(candidates_dictionary)
-    final_list = list(zip(votes,candidates_votes))
+        # test print dictionary
+    # print(candidates_dictionary)   
+    
+    # Calculating The percentage of votes each candidate won
+        (candidates_votes / total_votes) 
+
+    #final_list = list(zip(votes,candidates_votes))
 
 
         
     
 # print out Eelction Results
-
-print("     Election Results:")
+print("     Election Results ")
 print("--------------------------------------")
 print(f'Total Votes: {total_votes}')
 print("--------------------------------------")
+# Created a For loop to iterate through dictionary and print each key
 for candidate, candidates_votes in candidates_dictionary.items():
     print(candidate + ':  ' + '('+str(candidates_votes)+')')
 
