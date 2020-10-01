@@ -75,5 +75,5 @@ with open("Election_Results.txt", 'w') as text:
         text.write(candidate + ':    ' + str(vote_percentage) + '%   ' + ' ('+str(candidates_votes)+') '"\n")
 
     text.write("======================================\n")
-    text.write(f'   Winner:   {candidates}'  "\n")
+    text.write(f'        Winner:   {candidates}' "\n")
     text.write("======================================\n")
