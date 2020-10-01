@@ -58,32 +58,22 @@ for candidate, candidates_votes in candidates_dictionary.items():
 print("======================================")
 print(f'Winner:   {candidates}')
 print("======================================")
-"""
 
+# Output text file (file name, 'w':write to file)
+with open("Election_Results.txt", 'w') as text:
+    text.write("======================================\n")
+    text.write("      Election Results " + "\n")
+    text.write("======================================\n\n")
+    text.write(f'Total Votes: {total_votes}' + "\n\n")
+    text.write("--------------------------------------\n")
+    for candidate, candidates_votes in candidates_dictionary.items():
+        vote_percentage = (round(candidates_votes/total_votes*100,2))
+        if candidates_votes > max_vote:
+           max_vote = candidates_votes
+           candidates = candidate
+           winner_candidate.append(candidate)
+        text.write(candidate + ':    ' + str(vote_percentage) + '%   ' + ' ('+str(candidates_votes)+') '"\n")
 
-  * A complete list of candidates who received votes
-
-  * The percentage of votes each candidate won
-
-  * The total number of votes each candidate won
-
-  * The winner of the election based on popular vote.
-
-* As an example, your analysis should look similar to the one below:
-
-  ```text
-  Election Results
-  -------------------------
-  Total Votes: 3521001
-  -------------------------
-  Khan: 63.000% (2218231)
-  Correy: 20.000% (704200)
-  Li: 14.000% (492940)
-  O'Tooley: 3.000% (105630)
-  -------------------------
-  Winner: Khan
-  -------------------------
-  ```
-
-* In addition, your final script should both print the analysis to the terminal and export a text file with the results.
-"""
+    text.write("======================================\n")
+    text.write(f'   Winner:   {candidates}'  "\n")
+    text.write("======================================\n")
