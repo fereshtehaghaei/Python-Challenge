@@ -60,7 +60,7 @@ print(f'Winner:   {candidates}')
 print("======================================")
 
 # Output text file (file name, 'w':write to file)
-with open("Election_Results.txt", 'w') as text:
+with open("Analysis/Election_Results.txt", 'w') as text:
     text.write("======================================\n")
     text.write("      Election Results " + "\n")
     text.write("======================================\n\n")

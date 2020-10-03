@@ -66,7 +66,7 @@ print(f'Greatest Increase in Profits: {greatest_increase_date} (${greatest_incre
 print(f'Greatest Decrease in Losses: {greatest_decrease_date} (${greatest_decrease_loss})')
 
 # Output text file (file name, 'w':write to file)
-with open("Financial_Analysis_Summary.txt", 'w') as text:
+with open("Analysis/Financial_Analysis_Summary.txt", 'w') as text:
     text.write("-----------------------------------------------------------\n") # \n next line
     text.write("  Financial Analysis:"+ "\n")
     text.write("-----------------------------------------------------------\n\n")
