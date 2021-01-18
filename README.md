@@ -6,7 +6,9 @@
 
 ![](Images/revenue-per-lead.png)
 
-* Create a Python script to analyze the financial records of a company that will be provided as data set called[budget_data.csv](PyBank/Resources/budget_data.csv). The dataset is composed of two columns: `Date` and `Profit/Losses`. 
+* Created a Python script to analyze the financial records of a company that will be provided as data set called [budget_data.csv](PyBank/Resources/budget_data.csv).
+
+* The dataset is composed of two columns: `Date` and `Profit/Losses`. 
 
 * The Python script will analyze the financial records to calculate each of the following:
 
@@ -39,7 +41,9 @@
 
 ![](Images/Vote_counting.png)
 
-* Create a Python script to analyze and modernize the vote-counting process for a small, rural town using a set of poll data called [election_data.csv](PyPoll/Resources/election_data.csv). The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`. 
+* Created a Python script to analyze and modernize the vote-counting process for a small, rural town using a set of poll data called [election_data.csv](PyPoll/Resources/election_data.csv). 
+
+* The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`. 
 
 * The Python script will analyze the votes and calculate each of the following:
 
